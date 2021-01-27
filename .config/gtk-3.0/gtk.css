@@ -1,0 +1,136 @@
+.xfce4-panel {
+	border-radius: 20px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+
+.whiskermenu-button {
+	padding-bottom: 5px;
+	padding-top: 5px;
+	color: #d8dee9;
+	background-color: #81a1c1;
+	border-radius: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 5px;
+}
+
+#pager-2 #xfce-panel-toggle-button:checked {
+	color: #89C1D1;
+	background-color: #414b5e;
+}
+
+#pager-2 #xfce-panel-toggle-button:hover {
+	color: #c0616a;
+	background-color: #414b5e;
+}
+
+
+
+#pager-2 .horizontal {
+	border-radius: 15px;
+	color: #d8dee9;
+	background-color: #414b5e;
+	margin: 7px;
+	margin-left: 3px;
+	margin-right: 3px;
+        padding: 10px;
+        border-radius:15px;
+        font-size: 20px;
+}
+
+#showdesktop-button{
+	padding-left: 2px;
+	padding-top: 2px;
+	color: #d8dee9;
+	background-color: #414b5e;
+	border-radius: 20px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin: 7px;
+}
+
+
+.genmon_valuebutton, .genmon_value, #showdesktop-button{
+	padding-bottom: 5px;
+	padding-top: 5px;
+	color: #d8dee9;
+	background-color: #4c566a;
+	border-radius: 20px;
+	padding-left: 7px;
+	padding-right: 10px;
+	margin: 5px;
+}
+
+#pulseaudio-button {
+	padding-bottom: 5px;
+	padding-top: 5px;
+	color: #d8dee9;
+	background-color: #434c5e;
+	border-radius: 20px;
+	padding-left: 6px;
+	padding-right: 8px;
+	margin: 5px;
+}
+#actions-button {
+	padding-bottom: 5px;
+	padding-top: 5px;
+	color: #d8dee9;
+	background-color: #434c5e;
+	border-radius: 20px;
+	padding-left: 9px;
+	padding-right: 8px;
+	margin: 5px;
+}
+
+/*thunar*/
+
+/*thunar*/
+
+.thunar toolbar{
+	margin-top: 0px;
+   /* margin-top: 0px;*/
+	padding-bottom: 6px;
+	padding-left: 8px;
+	padding-right: 8px;
+	background-color: #3b4252; }
+  
+  /*buttons in toolbar*/
+  
+  .thunar toolbar.horizontal button image {
+	
+	-gtk-icon-transform:scale(0.72);
+  }
+  
+  scrolledwindow.sidebar treeview.view {
+	border: none;
+	background-color: #2e3440;
+  }
+  
+  /*path-bar of thunar*/
+  window.thunar toolbar#location-toolbar > toolitem > widget > widget.linked.path-bar > button.toggle.path-bar-button:checked {
+  color: #ffffff;
+  border-radius: 20px 20px 20px 20px;
+  
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  window.thunar toolbar#location-toolbar > toolitem > widget > widget.linked.path-bar > button.path-bar-button {
+  background: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  }
+  
+  /*thunar sidepane*/
+  
+  window.thunar paned > scrolledwindow treeview.view:selected {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to right,#2e3440, #5e81ac);
+  -gtk-secondary-caret-color: #eceff4;
+  }
+  treeview.thunar {
+	  background-color: #81a1c1;
+  }
