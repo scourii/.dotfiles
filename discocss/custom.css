@@ -1,23 +1,23 @@
 :root {
-    --elk-font-family: "Rubik";
-    --elk-font-size: 15.5px;
+    --elk-font-family: "Victor Mono";
+    --elk-font-size: 14.5px;
 }
 
 * {
     font-family: var(--elk-font-family) !important;
-    font-weight: normal !important;
+    font-weight: Normal !important;
     font-size: var(--elk-font-size) !important;
   }
 
 .theme-dark {
     --background-tertiary: #2e3440;
-    --background-primary-alt: #2e3440;
-    --background-secondary: #2e3440;
-    --background-secondary-alt: #3b4252;
-    --background-primary: #2e3440;
+    --background-primary-alt: #2E3440;
+    --background-secondary: #3B4252;
+    --background-secondary-alt: #4c566a;
+    --background-primary: #2E3440;
     --channeltextarea-background: #4c566a;
     --background-accent: #5e81ac;
-    --background-modifier-hover: #2e3440;
+    --background-modifier-hover: #434C5E;
     --background-modifier-active: #2e3440;
     --background-modifier-selected: #434c5e;
     --deprecated-card-bg: #eceff4;
@@ -30,13 +30,72 @@
     --activity-card-background: #2e3440;
     --deprecated-panel-background: #2e3440;
     --background-modifier-selected: #4c566a;
-   
-    
+    --header-spotify: #5d6051;
+    --text-spotify: #79695a;    
 }
+
   [class*="userPopout"] [class*="body"],
   [class*="userPopout"] [class*="footer"] {
-    background-color: #3b4252;
+    background-color: var(--background-secondary-alt);
 }
+/* Topleft Discord Icon */
+.wrapper-1BJsBx.selected-bZ3Lue .childWrapper-anI2G9 {
+    background-color: var(--background-primary);
+}
+.wrapper-1BJsBx .childWrapper-anI2G9 {
+    background-color: var(--background-primary);
+}
+  [class*="DraftEditorPlaceHolder-hasfocus"] {
+    background-color:  var(--background-secondary-alt);
+}
+/* Spotify */
+div[class^="topSectionSpotify"] > header > div[class^="headerInfo"]{
+    background-color: var(--background-primary);
+}
+
+[class*="headerSpotify-zpWxgT header-2BwW8b size16-14cGz5"]{
+	background-color: var(--background-secondary-alt);
+}
+div[class^="topSectionSpotify"] {
+    background-color: var(--background-primary);
+}
+div[class*="topSectionSpotify"] > header > div[class*="headerInfo"] > div[class*="nameTag"] > * {
+    color: white;
+}
+div[class^="topSectionPlaying"] > header[class^="header"] {
+    background-color: var(--background-secondary);
+}
+div[class*="topSectionPlaying"] > header > button[class*="actionButton"] {
+    background-color: var(--background-tertiary);
+}
+/* Activity Bars */
+div[class*="activityProfile-2bJRaP activity-1ythUs"] {
+	background-color: var(--background-primary);
+}
+div[class*="tabBar-2MuP6- top-28JiJ-"]{
+	background-color: var(--background-primary)
+}
+div[class*="tabBarContainer-1s1u-z"]{
+	background-color: var(--background-primary)
+}
+div[class*="bodyAlignCenter-1KzvJk body-ZAhrcj flex-1O1GKY alignCenter-1dQNNs"]{
+	background-color: var(--background-primary)
+}
+/* Search Container Selection */
+.layerContainer-yqaFcK{
+	border-color: currentcolor;
+	background-image: none !important;
+	outline-color: white;
+}
+.resultsGroup-r_nuzN{
+	background-image: none;
+	background-color: #2e3440;
+	border-color: currentcolor;
+}
+* > div[class*="activityText"] {
+    color: var(--text-muted);
+}
+/* Name Area */
   [class*="peopleColumn"] {
     background-color: #2e3440;
   }
@@ -44,7 +103,7 @@
   [class*="section"] {
     background-color: #2e3440;
   }
-
+/* People's Profiles */
   [class*="userPopout"] [class*="headerNormal"] {
     background-color: #2e3440;
   }
@@ -63,7 +122,7 @@
     background-color: #2e3440; 
     filter: brightness(110%);
   }
-
+/* Bar for New messages */
   [class*="newMessagesBar-"] button {
     color: #FFFFFF; 
   }
@@ -71,9 +130,23 @@
     background-color: #3b4252;
     opacity: 1;
   }
+
   [class*="headerPlaying"] * {
-    background-color: #2e3440; 
+    background-color: var(--background-secondary-alt); 
   }
+/* Emote Selector Popup */
+  [class^="autocompleteInner"] * {
+	background-color: #2e3440;
+}
+.base-1pYU8j selectable-3dP3y- selected-1Tbx07{
+	background-color: var(--background-primary);
+}
+.selected-1Tbx07{
+	background-color: #2e3440;
+}
+  [class^="DraftEditorPlaceholder-root"] * {
+	background-color: #2e3440;
+}
 
 .theme-light {
     --background-tertiary: #2e3440;
@@ -93,3 +166,4 @@
     --scrollbar-thin-thumb: #d8dee9;
     --elevation-low: none;
 }
+
