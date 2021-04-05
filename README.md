@@ -10,6 +10,7 @@ A backup for my custom Linux Scripts and setup. Make sure to read through every 
 - Music Player: cmus
 - Notifications: Dunst
 - Bar: Lemonbar
+- Pdf Viewer: zathura
 ## HerbstluftWM
 ![](https://cdn.discordapp.com/attachments/743628295668498443/828675038869192704/unknown.png)
 ![](https://cdn.discordapp.com/attachments/743628295668498443/828675254729179206/unknown.png)
