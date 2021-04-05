@@ -9,6 +9,7 @@ A backup for my custom Linux Scripts and setup. Make sure to read through every 
 - Terminal: urxvt
 - Music Player: cmus
 - Notifications: Dunst
+- Bar: Lemonbar
 ## HerbstluftWM
 ![](https://cdn.discordapp.com/attachments/743628295668498443/828675038869192704/unknown.png)
 ![](https://cdn.discordapp.com/attachments/743628295668498443/828675254729179206/unknown.png)
