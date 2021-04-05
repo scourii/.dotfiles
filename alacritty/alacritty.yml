@@ -1,4 +1,6 @@
-background_opacity: 0.75
+
+
+
 
 window:
   # Window dimensions in character columns and lines
@@ -7,7 +9,11 @@ window:
   dimensions:
     columns: 100
     lines: 30
-
+  
+  padding: 
+    x: 20
+    y: 20
+  dynamic_padding: true
 font:
   # The normal (roman) font face to use.
   normal:
@@ -28,7 +34,7 @@ font:
     # style: Italic
  
   # Point size of the font
-  size: 8.5  
+  size: 12.5  
 
 colors:
   primary:
