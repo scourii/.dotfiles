@@ -1,11 +1,11 @@
 :root {
-    --elk-font-family: "Victor Mono";
+    --elk-font-family: "JetBrains Mono";
     --elk-font-size: 14.5px;
 }
 
 * {
     font-family: var(--elk-font-family) !important;
-    font-weight: Normal !important;
+    font-weight: None !important;
     font-size: var(--elk-font-size) !important;
   }
 
