@@ -67,11 +67,11 @@ check_bat() {
         bat_state="$(cat /sys/class/power_supply/BAT1/status)"
         if [ "$bat" -lt 20 ]; then
             bati=""
-        elif [ "$bat" -ge "20" ] && [ "$bat" -lt "40" ]; then
+        elif [ "$bat" -ge "20" ] && [ "$bat" -le "40" ]; then
             bati=""
-        elif [ "$bat" -ge "40" ] && [ "$bat" -lt "60" ]; then
+        elif [ "$bat" -ge "40" ] && [ "$bat" -le "60" ]; then
             bati=""
-        elif [ "$bat" -ge "60" ] && [ "$bat" -lt "90" ]; then
+        elif [ "$bat" -ge "60" ] && [ "$bat" -le "90" ]; then
             bati=""
         elif [ "$bat" -gt "90" ]; then
             bati=""
