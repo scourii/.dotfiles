@@ -9,7 +9,7 @@ hc set_layout horizontal
 hc emit_hook reload
 hc set_monitors 1920x1047+0+33 1920x1047+1920+33
 xsetroot -solid '#222222'
-picom --shadow-opactiy 0.25 &
+picom --corner-radius 8 
 # remove all existing keybindings
 hc keyunbind --all
 
@@ -106,7 +106,7 @@ hc keybind XF86AudioLowerVolume spawn /home/scouri/audiodown.sh
 # theme
 hc attr theme.tiling.reset 1
 hc attr theme.floating.reset 1
-
+hc keybind $Mod-Shift-q killall hersbtluftwm && herbstluftwm
 
 hc set frame_border_active_color '#222222'
 hc set frame_border_normal_color '#101010'
