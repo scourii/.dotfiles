@@ -103,6 +103,7 @@ hc keybind $Mod-i jumpto urgent
 
 hc keybind XF86AudioRaiseVolume spawn /home/scouri/audioup.sh
 hc keybind XF86AudioLowerVolume spawn /home/scouri/audiodown.sh
+hc keybind $Mod-Shift-b spawn /home/scouri/hidebar.sh
 # theme
 hc attr theme.tiling.reset 1
 hc attr theme.floating.reset 1
