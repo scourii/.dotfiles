@@ -53,7 +53,7 @@ Xft.rgba: rgb
 Xft.dpi: 96
 
 
-URxvt.font:xft: JetBrains Mono Light:size=12.5, xft:Noto Sans:size=9, xft:DejaVu Sans:style=Regular:size=9, xft:Noto Serif CJK JP:style=SemiBold:size=11, xft:mplus Nerd Font:size=9
+URxvt.font:xft: JetBrains Mono Light:size=12.5, xft:Noto Sans:size=9, xft:DejaVu Sans:style=Regular:size=9, xft:Noto Serif CJK JP:style=SemiBold:size=11, xft:FantasqueSansMono Nerd Font:size=12, xft:MesloLGM Nerd Font:style=Regular:size=12, xft:mplus Nerd Font:size=12, xft:MesloLGM Nerd Font:style=Regular:size=12, xft:FontAwesome:size=9
 URxvt.boldFont:xft: JetBrains Mono Light:bold:size=12.5, xft:Noto Sans:size=9
 URxvt.italicFont:xft: JetBrains Mono Light:italic:size=12.5, xft:Noto Sans:size=9
 URxvt.boldItalicfont: JetBrains Mono Light:bold:size=12.5, xft:Noto Sans:size=9
@@ -71,6 +71,7 @@ URxvt.visualBell: false
 URxvt.depth:                      24
 URxvt.iso14755:                   false
 URxvt.letterSpace: -1
+URxvt.lineSpace: 1
 
 URxvt.tabbed.tabbar-fg: 2
 URxvt.tabbed.tabbar-bg: 0
