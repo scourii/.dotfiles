@@ -1,0 +1,21 @@
+* {
+    background-color:       #8f8678;
+    text-color:             #685c56;
+	font:				 	"SF Mono 12";
+}
+
+window {
+    background-color:       #8f8678;
+    width:      			300px;
+    padding:    			25px;
+    location:               center;
+}
+
+prompt {
+	margin:					0 20px 0 0;
+}
+
+entry {
+    expand: 				true;
+    text-color:				#685c56;
+}
