@@ -6,13 +6,12 @@ set textwidth=100
 filetype indent on
 filetype plugin on
 filetype plugin indent on
-
-
+set termguicolors
+set clipboard+=unnamedplus
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'junegunn/goyo.vim'
-Plug 'vim-latex/vim-latex'
 Plug 'reedes/vim-pencil'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
@@ -46,6 +45,10 @@ let g:nvim_tree_auto_open = 1
 autocmd! User GoyoEnter Limelight PencilSoft
 let g:goyo_width = '140'
 let NERDTreeShowHidden=1
+
+autocmd BufNewFile,BufRead *.mdown set filetype=pandoc
+autocmd BufNewFile *.mdown r ~/.config/nvim/templates/template.mdown | set expandtab
+autocmd BufNewFile *.mkdwn r ~/.config/nvim/templates/template.mkdwn
 
 set rulerformat=%25(%)
 set rulerformat+=%=
@@ -81,8 +84,11 @@ let g:currentmode = {
             \ '!'  : 'shell',
             \ 't'  : 'terminal'
                    \}
+
 hi StatusLine    ctermfg=black ctermbg=red
 hi StatusLineNC  ctermfg=red   ctermbg=8
+
+let g:templates_directory = '~/.config/nvim/templates'
 nnoremap <C-n> :NERDTreeToggle<CR>
 noremap <C-g> :Goyo<CR> 
 noremap <C-l> :Limelight!!<CR>
