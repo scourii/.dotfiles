@@ -8,6 +8,36 @@
     font-weight: None !important;
     font-size: var(--elk-font-size) !important;
   }
+.theme-light {
+  --background-tertiary: #e6dad6;
+  --background-primary-alt: #dad3d0;
+  --background-secondary: #dad3d0;
+  --background-secondary-alt: #b6a8a2;
+  --background-primary: #e6dad6;
+  --channeltextarea-background: #dad3d0;
+  --background-accent: #938680;
+  --background-modifier-active: #b6a8a2;
+  --background-modifier-selected: #938680;
+  --deprecated-card-bg: #e6dad6;
+  --background-floating: #b6a8a2;
+  --deprecated-quickswitcher-input-background: #938680;
+  --scrollbar-auto-thumb: #938680;
+  --scrollbar-auto-track: #b6a8a2;
+  --scrollbar-thin-thumb: #e6dad6;
+  --elevation-low: none;
+  --header-primary: #685c56;
+  --activity-card-background: #b6a8a2;
+  --deprecated-panel-background: #938680;
+  --background-modifier-selected: #b6a8a2;
+  --header-spotify: #b6a8a2;
+  --text-spotify: #b6a8a2;
+  --logo-primary: #e6dad6;
+  --radio-group-dot-foreground: #b6a8a2;
+  --text-link: #938680;
+  --interactive-active: black;
+  --interactive-hover: #938680;
+  --interactive-normal: #685c56;
+}
 
 .theme-dark {
     --background-tertiary: #2e3440;
@@ -32,6 +62,123 @@
     --background-modifier-selected: #4c566a;
     --header-spotify: #5d6051;
     --text-spotify: #79695a;    
+}
+/* New colors???? Why. */
+[data-popout-root]
+.newBrand, html.newBrand {
+    --brand-experiment-100: var(--background-primary);
+    --brand-experiment-130: var(--background-primary);
+    --brand-experiment-160: var(--background-primary);
+    --brand-experiment-200: var(--background-primary);
+    --brand-experiment-230: var(--background-primary);
+    --brand-experiment-260: var(--background-primary);
+    --brand-experiment-300: var(--background-primary);
+    --brand-experiment-330: var(--background-primary);
+    --brand-experiment-360: var(--background-primary);
+    --brand-experiment-400: var(--background-primary);
+    --brand-experiment-430: var(--background-primary);
+    --brand-experiment-460: var(--background-primary);
+    /* New Blurple */
+    --brand-experiment: var(--background-secondary-alt);
+    --brand-experiment-500: var(--background-primary);
+    /* Ping Name */
+    --brand-experiment-530: var(--background-secondary-alt);
+    --brand-experiment-560: var(--background-primary);
+    --brand-experiment-600: var(--background-primary);
+    --brand-experiment-630: var(--background-primary);
+    --brand-experiment-660: var(--background-primary);
+    --brand-experiment-700: var(--background-primary);
+    --brand-experiment-730: var(--background-primary);
+    --brand-experiment-760: var(--background-primary);
+    --brand-experiment-800: var(--background-primary);
+    --brand-experiment-830: var(--background-primary);
+    --brand-experiment-860: var(--background-primary);
+    --brand-experiment-900: var(--background-primary);
+    --brand-experiment-05a: var(--background-primary);
+    --brand-experiment-10a: var(--background-primary);
+    --brand-experiment-15a: var(--background-primary);
+    --brand-experiment-20a: var(--background-primary);
+    --brand-experiment-25a: var(--background-primary);
+    --brand-experiment-30a: var(--background-primary);
+    --brand-experiment-35a: var(--background-primary);
+    --brand-experiment-40a: var(--background-primary);
+    --brand-experiment-45a: rgba(88,101,242,0.45);
+    --brand-experiment-50a: rgba(88,101,242,0.5);
+    --brand-experiment-55a: rgba(88,101,242,0.55);
+    --brand-experiment-60a: rgba(88,101,242,0.6);
+    --brand-experiment-65a: rgba(88,101,242,0.65);
+    --brand-experiment-70a: rgba(88,101,242,0.7);
+    --brand-experiment-75a: rgba(88,101,242,0.75);
+    --brand-experiment-80a: rgba(88,101,242,0.8);
+    --brand-experiment-85a: rgba(88,101,242,0.85);
+    --brand-experiment-90a: rgba(88,101,242,0.9);
+    --brand-experiment-95a: rgba(88,101,242,0.95);
+    --control-brand-foreground: var(--control-brand-foreground-new);
+}
+
+/* Status */
+.theme-light .headerNormal-T_seeN .headerName-fajvi9, .theme-light .headerNormal-T_seeN .headerTagUsernameNoNickname-2_H881 {
+	color: fff;
+}
+.activity-11LB_k {
+	background-color: var(--background-secondary-alt);
+}
+
+element.style {
+    border-color: FFF;
+}
+
+.headerTop-3C2Zn0 {
+    padding: 16px;
+    background-color: var(--background-secondary-alt);
+}
+.theme-light .body-3iLsc4, .theme-light .footer-1fjuF6 {
+	background-color: var(--background-primary-alt);
+}
+.theme-light .headerNormal-T_seeN .headerName-fajvi9, .theme-light .headerNormal-T_seeN .headerTagUsernameNoNickname-2_H881 {
+	color: var(--background-primary);
+}
+/* Reactions */
+
+.theme-light .container-1If-HZ, .theme-light .reactors-Blmlhw {
+	background-color: var(--background-primary-alt);
+
+.reactors-Blmlhw, .scroller-1-nKid {
+	background: var(--background-primary);
+}
+
+.theme-light .reactionSelected-1pqISm {
+	background-color: var(--background-primary-alt);
+}
+
+[class*="modal"] [class*="queryContainer-"], [class*="modal"] [class*="resultsGroup-"], [class*="modal"] [class*="bodyInner-"], [class*="modal"] [class*="quickMessage-"], [class*="modal"] [class*="header-"]:not(header):not(h2), [class*="modal"] [class*="uploadModal-"], [role*="dialog"] form {
+    background-color: var(--deprecated-card-bg);
+}
+
+div[class*="header-13MUnb"]{
+	background-color: var(--deprecated-card-bg);
+}
+[class*="modal"] [class*="queryContainer-"], [class*="modal"] [class*="resultsGroup-"], [class*="modal"] [class*="bodyInner-"], [class*="modal"] [class*="quickMessage-"], [class*="modal"] [class*="header-"]:not(header):not(h2), [class*="modal"] [class*="uploadModal-"], [role*="dialog"] form {
+    background-color: var(--background-secondary);
+}
+/* Song files */
+.audioControls-2HsaU6 {
+	background-color: var(--background-primary);
+}
+/* Nitro Payment thing */
+
+.theme-dark .paymentPane-3bwJ6A {
+    background-color: var(--background-secondary);
+    color: var(--deprecated-card-bg);
+}
+
+.theme-dark .codeRedemptionRedirect-1wVR4b {
+    color: var(--deprecated-card-bg);
+    background-color: var(--background-secondary);
+}
+
+.cardPrimary-1Hv-to {
+    background: var(--background-secondary);
 }
 
   [class*="userPopout"] [class*="body"],
@@ -60,7 +207,7 @@ div[class^="topSectionSpotify"] {
     background-color: var(--background-primary);
 }
 div[class*="topSectionSpotify"] > header > div[class*="headerInfo"] > div[class*="nameTag"] > * {
-    color: white;
+    color: var(--deprecated-card-bg);
 }
 div[class^="topSectionPlaying"] > header[class^="header"] {
     background-color: var(--background-secondary);
@@ -76,20 +223,20 @@ div[class*="tabBar-2MuP6- top-28JiJ-"]{
 	background-color: var(--background-primary)
 }
 div[class*="tabBarContainer-1s1u-z"]{
-	background-color: var(--background-primary)
+	background-color: var(--background-primary);
 }
 div[class*="bodyAlignCenter-1KzvJk body-ZAhrcj flex-1O1GKY alignCenter-1dQNNs"]{
-	background-color: var(--background-primary)
+	background-color: var(--background-primary);
 }
 /* Search Container Selection */
 .layerContainer-yqaFcK{
 	border-color: currentcolor;
 	background-image: none !important;
-	outline-color: white;
+	outline-color: var(--deprecated-card-bg);
 }
 .resultsGroup-r_nuzN{
 	background-image: none;
-	background-color: #2e3440;
+	background-color: var(--primary-background);
 	border-color: currentcolor;
 }
 * > div[class*="activityText"] {
@@ -97,15 +244,15 @@ div[class*="bodyAlignCenter-1KzvJk body-ZAhrcj flex-1O1GKY alignCenter-1dQNNs"]{
 }
 /* Name Area */
   [class*="peopleColumn"] {
-    background-color: #2e3440;
+    background-color: var(--background-primary);
   }
   
   [class*="section"] {
-    background-color: #2e3440;
+    background-color: var(--background-primary);
   }
 /* People's Profiles */
   [class*="userPopout"] [class*="headerNormal"] {
-    background-color: #2e3440;
+    background-color: var(--background-primary);
   }
   [class*="modal"] [class*="queryContainer-"],
   [class*="modal"] [class*="resultsGroup-"],
@@ -115,19 +262,28 @@ div[class*="bodyAlignCenter-1KzvJk body-ZAhrcj flex-1O1GKY alignCenter-1dQNNs"]{
   [class*="modal"] [class*="header-"]:not(header):not(h2),
   [class*="modal"] [class*="uploadModal-"],
   [role*="dialog"] form {
-    background-color: #2e3440;
+    background-color: var(--background-primary);
   }
 
   [class*="modal"] [class*="footer-"] {
-    background-color: #2e3440; 
+    background-color: var(--background-primary);
     filter: brightness(110%);
   }
+
+[class*="actionButton-3W1xZa button-38aScr lookFilled-1Gx00P colorGreen-29iAKY sizeSmall-2cSMqn grow-q77ONN"] {
+	background-color: var(--background-primary);
+}
+.light-theme, .lookFilled-1Gx00P.colorGreen-29iAKY {
+	background-color: var(--background-primary);
+	color: fff;
+}
+
 /* Bar for New messages */
   [class*="newMessagesBar-"] button {
-    color: #FFFFFF; 
+    color: var(--deprecated-card-bg);
   }
   [class*="newMessagesBar-"] {
-    background-color: #3b4252;
+    background-color: var(--background-accent);
     opacity: 1;
   }
 
@@ -136,34 +292,30 @@ div[class*="bodyAlignCenter-1KzvJk body-ZAhrcj flex-1O1GKY alignCenter-1dQNNs"]{
   }
 /* Emote Selector Popup */
   [class^="autocompleteInner"] * {
-	background-color: #2e3440;
+	background-color: var(--background-primary);
 }
 .base-1pYU8j selectable-3dP3y- selected-1Tbx07{
 	background-color: var(--background-primary);
 }
 .selected-1Tbx07{
-	background-color: #2e3440;
+	background-color: var(--background-primary);
 }
-  [class^="DraftEditorPlaceholder-root"] * {
-	background-color: #2e3440;
+[class^="DraftEditorPlaceholder-root"] * {
+	background-color: var(--background-primary);
 }
-
-.theme-light {
-    --background-tertiary: #2e3440;
-    --background-secondary: #2e3440;
-    --background-secondary-alt: #3b4252;
-    --background-primary: #2e3440;
-    --channeltextarea-background: #4c566a;
-    --background-accent: #5e81ac;
-    --background-modifier-hover: #2e3440;
-    --background-modifier-active: #2e3440;
-    --background-modifier-selected: #434c5e;
-    --deprecated-card-bg: #eceff4;
-    --background-floating: #4c566a;
-    --deprecated-quickswitcher-input-background:#4c566a;
-    --scrollbar-auto-thumb: #d8dee9;
-    --scrollbar-auto-track: #3b4252;
-    --scrollbar-thin-thumb: #d8dee9;
-    --elevation-low: none;
+[class="base-1pYU8j selectable-3dP3y-"] {
+	background-color: var(--background-primary-alt);
+}
+[class="autocompleteInner-zh20B_"] {
+	background-color: var(--background-primary-alt);
 }
 
+[class="contentTitle-2tG_sM base-1x0h_U size12-3cLvbJ"] {
+	background-color: var(--background-primary);
+}
+[class*="peopleColumn-29fq28"] {
+	background-color: var(--background-primary);
+}
+[class=".peopleList-3c4jOR"] {
+	background-color: var(--background-primary)
+}
