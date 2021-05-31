@@ -16,36 +16,26 @@ Plug 'reedes/vim-pencil'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'junegunn/limelight.vim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'glepnir/dashboard-nvim'
 call plug#end()
-
+let g:dashboard_custom_shortcut_icon['last_session'] = ' '
+let g:dashboard_custom_shortcut_icon['find_history'] = 'ﭯ '
+let g:dashboard_custom_shortcut_icon['find_file'] = ' '
+let g:dashboard_custom_shortcut_icon['new_file'] = ' '
+let g:dashboard_custom_shortcut_icon['change_colorscheme'] = ' '
+let g:dashboard_custom_shortcut_icon['find_word'] = ' '
+let g:dashboard_custom_shortcut_icon['book_marks'] = ' '
 let g:limelight_conceal_ctermfg = 'green'
 let g:limelight_default_coefficient = 0.7
-
-
-let g:nvim_tree_side = "left"
-let g:nvim_tree_width = 24
-let g:nvim_tree_auto_open = 0
-let g:nvim_tree_auto_close = 0
-let g:nvim_tree_quit_on_open = 0
-let g:nvim_tree_follow = 1
-let g:nvim_tree_indent_markers = 1
-let g:nvim_tree_hide_dotfiles = 1
-let g:nvim_tree_git_hl = 1
-let g:nvim_tree_root_folder_modifier = ":~"
-let g:nvim_tree_tab_open = 1
-let g:nvim_tree_allow_resize = 1
-
-let g:nvim_tree_show_icons = {
-    \ 'git': 0,
-    \ 'folders': 0,
-    \ 'files': 0,
-    \ }
-let g:nvim_tree_auto_open = 1
-
+autocmd VimEnter * echo "Message"
 autocmd! User GoyoEnter Limelight PencilSoft
 let g:goyo_width = '140'
 let NERDTreeShowHidden=1
-
+let g:dashboard_default_executive ='telescope.nvim'
 autocmd BufNewFile,BufRead *.mdown set filetype=pandoc
 autocmd BufNewFile *.mdown r ~/.config/nvim/templates/template.mdown | set expandtab
 autocmd BufNewFile *.mkdwn r ~/.config/nvim/templates/template.mkdwn
@@ -55,7 +45,6 @@ set rulerformat+=%=
 "set rulerformat+=%{&modified?'*':''}
 set rulerformat+=\ %v:%l\ ~\ %p%%
 set rulerformat+=\ \|\ %Y%*
-
 set statusline=
 set statusline+=\ %{toupper(g:currentmode[mode()])}
 set statusline+=\ %{&modified?'[+]':''}
@@ -63,6 +52,15 @@ set statusline+=%=
 set statusline+=\ %v:%l\/%L
 set statusline+=\ %Y%4*
 
+let g:dashboard_custom_shortcut={
+\ 'last_session'       : 'SPC s l',
+\ 'find_history'       : 'SPC f h',
+\ 'find_file'          : 'SPC f f',
+\ 'new_file'           : 'SPC c n',
+\ 'change_colorscheme' : 'SPC t c',
+\ 'find_word'          : 'SPC f a',
+\ 'book_marks'         : 'SPC f b',
+\ }
 let g:currentmode = {
             \ 'n'  : 'normal',
             \ 'no' : 'n-op',
@@ -93,6 +91,7 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 noremap <C-g> :Goyo<CR> 
 noremap <C-l> :Limelight!!<CR>
 nnoremap <C-p> :PencilSoft<CR>
+nnoremap <C-f> :Telescope find_files<CR>
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 
 
