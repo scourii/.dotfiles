@@ -26,7 +26,7 @@ clock='\uf017'
 # Date
 check_date() {
 	while :; do
-		echo -e "DAT$(date "+%a, %b %d ${fgb}${fgn} %I:%M %p")" > "$fifo"
+		echo -e "DAT$(date "+%a, %b %d ${fgb}${fgn} %H:%M")" > "$fifo"
 		sleep 1 &
 		wait
 	done &
