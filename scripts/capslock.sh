@@ -5,7 +5,7 @@ if [[ "$caps" == "off" ]];
 then
 	output="Caps Lock is off"
 else	
-	output="Caps Lock is on"
+	output="Caps Lock Warning"
 fi
 
 notify-send "$output"
