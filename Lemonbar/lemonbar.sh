@@ -18,16 +18,17 @@ trap 'update' 10   # allows user to instantaneously update the bar
 
 trap "pkill lemonbar; kill $(jobs -p); rm -r $fifo; rm -r $lockf" EXIT # Cleanly exit
 
-fgb='%{F#88c0d0}'
+fgb='%{F#8f8678}'
 fgn='%{F-}'
-fga='%{F#8fbcbb}'
-bgf='%{B#81a1c1}'
+fga='%{F#839773}'
+bgf='%{B#c8c2bf}'
+
 clock='\uf017'
 # Date
 check_date() {
 	while :; do
 		echo -e "DAT$(date "+%a, %b %d ${fgb}${fgn} %H:%M")" > "$fifo"
-		sleep 1 &
+		sleep 60 &
 		wait
 	done &
 }
@@ -93,7 +94,7 @@ check_bat() {
 # Volume            
 check_vol() {                                                 
 	while :; do
-     	vol="$(pacmd list-sinks | grep -A 15 '* index'| awk '/volume: front/{ print $5 }' | sed 's/%//g')"
+     	vol="$(pamixer --get-volume)"
 
     	if [ "$vol" -ge "0" ] && [ "$vol" -lt "30" ]; then
 			voli=""
@@ -116,11 +117,17 @@ check_vol() {
 check_mus() {
     # no while loop, refresh the bar with pkill whenever you launch cmus
 	while :; do
-		if pgrep -x "cmus" >/dev/null 2>&1; then
-		title="$(cmus-remote -Q | grep "tag title " | sed "s/tag title //")"
-		album="$(cmus-remote -Q | grep "tag album " | sed "s/tag album //")"
-		artist="$(cmus-remote -Q | grep "tag artist " | sed "s/tag artist //")"
-		echo "MUS${fgb} ~ ${fgn}$album${fgb} | $title ${fgn}" > $fifo &
+		if pgrep -x "cmus" >/dev/null 2>&1; 
+		then
+			title="$(cmus-remote -Q | grep "tag title " | sed "s/tag title //")"
+			album="$(cmus-remote -Q | grep "tag album " | sed "s/tag album //")"
+			artist="$(cmus-remote -Q | grep "tag artist " | sed "s/tag artist //")"
+			if [[ "$album" == "$title" ]]
+			then
+				echo "MUS${fgb} ~ ${fgn}$artist${fgb} | $title ${fgn}" > $fifo &
+			else
+				echo "MUS${fgb} ~ ${fgn}$album${fgb} | $title ${fgn}" > $fifo &
+			fi
 		else
 			echo "MUS${fgb} ~ " > $fifo &
 		
