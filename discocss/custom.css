@@ -1,13 +1,15 @@
 :root {
-    --elk-font-family: "JetBrains Mono";
-    --elk-font-size: 14.5px;
+    --elk-font-family: "CozetteVector";
+    --elk-font-size: 14px;
 }
 
 * {
     font-family: var(--elk-font-family) !important;
     font-weight: None !important;
+    letter-spacing: -.05px
     font-size: var(--elk-font-size) !important;
   }
+
 .theme-light {
   --background-tertiary: #e6dad6;
   --background-primary-alt: #dad3d0;
@@ -167,12 +169,11 @@ div[class*="header-13MUnb"]{
 }
 /* Nitro Payment thing */
 
-.theme-dark .paymentPane-3bwJ6A {
+.paymentPane-3bwJ6A {
     background-color: var(--background-secondary);
     color: var(--deprecated-card-bg);
 }
-
-.theme-dark .codeRedemptionRedirect-1wVR4b {
+.codeRedemptionRedirect-1wVR4b {
     color: var(--deprecated-card-bg);
     background-color: var(--background-secondary);
 }
@@ -228,20 +229,94 @@ div[class*="tabBarContainer-1s1u-z"]{
 div[class*="bodyAlignCenter-1KzvJk body-ZAhrcj flex-1O1GKY alignCenter-1dQNNs"]{
 	background-color: var(--background-primary);
 }
-/* Search Container Selection */
-.layerContainer-yqaFcK{
-	border-color: currentcolor;
-	background-image: none !important;
-	outline-color: var(--deprecated-card-bg);
+/* Seach Window Thingy */
+.container-3ayLPN {
+    background-color: #20202A;
 }
-.resultsGroup-r_nuzN{
-	background-image: none;
-	background-color: var(--primary-background);
-	border-color: currentcolor;
+
+.option-96V44q:after {
+    background: #20202A;
+}
+
+.option-96V44q.selected-rZcOL- {
+    background: #2c2e3e;
+}
+
+.option-96V44q .filter-3Y_im- {
+    color: #b8dceb;
+    font-style: italic;
+}
+
+.option-96V44q .answer-1n6g43, .option-96V44q .nonText-3CRkO0, .option-96V44q strong {
+    color: #b1dba4;
+}
+
+#popout_886, .layer-v9HyYc {
+    top: 70px !important;
 }
 * > div[class*="activityText"] {
     color: var(--text-muted);
 }
+/* Makes scrollbar less cringe */ 
+.scrollerThemed-2oenus.themedWithTrack-q8E3vB .scroller-2FKFPG::-webkit-scrollbar-track-piece, .scroller-2FKFPG::-webkit-scrollbar-track-piece{
+  border: 0;
+  margin-right: 0px;
+  background-color: #2e3440;
+  width:20px;
+}
+.auto-Ge5KZx::-webkit-scrollbar-thumb, .auto-Ge5KZx::-webkit-scrollbar-track {
+  border-right:  0px solid transparent;
+  border-left:  8px solid transparent;
+  border-radius: 0px;
+}
+
+/* Makes the message box a rectangle */ 
+.channelTextArea-rNsIhG { margin-bottom: 0; }
+.form-2fGMdU { padding: 0; }
+.inner-MADQqc { padding-top: 4px; }
+.base-gE7OpD { /* typing and slowmode stuff */
+    top: -24px; /* height is 24px */
+    background-color: var(--background-primary);
+}
+.scrollableContainer-2NUZem {
+    border-radius: 0px;
+    min-height: 53px;
+}
+/* Puts the Home button in a reasonable area */
+ul[data-list-id="guildsnav"] > div[class^="scroller"] {
+    padding-top: 0 !important;
+}
+
+ul[data-list-id="guildsnav"] > div[class^="scroller"] > div:first-child > div {
+    box-shadow: var(--elevation-low);
+}
+
+ul[data-list-id="guildsnav"] > div[class^="scroller"] > div:first-child + div > div[class^="guildSeparator"] {
+    display: none; /* separator */
+}
+
+div[href="/channels/@me"]:not(:hover) > div {
+    background-color: transparent !important;
+}
+
+/* Hides the home button selection pill and blurple background when selected*/
+.pill-3N7f9r{
+    display:none !important;
+}
+
+.wrapper-1BJsBx.selected-bZ3Lue .childWrapper-anI2G9, .wrapper-1BJsBx:hover .childWrapper-anI2G9 {
+    background: none !important;
+}
+
+/* Pins the Home button */
+.tutorialContainer-2sGCg9 {
+    position: fixed;
+    z-index: 1;
+    background: linear-gradient(var(--background-tertiary) 100%, transparent);
+}
+.guilds-1SWlCJ .scroller-1Bvpku { contain: none !important; padding-top: 0;}
+.guilds-1SWlCJ .scroller-1Bvpku > [aria-label], .guilds-1SWlCJ .scroller-1Bvpku > [style]:nth-child(2) { margin-top: 58px;}
+.guilds-1SWlCJ .scroller-1Bvpku > [style] ~ [aria-label] { margin-top: 0px;}
 /* Name Area */
   [class*="peopleColumn"] {
     background-color: var(--background-primary);
@@ -318,4 +393,14 @@ div[class*="bodyAlignCenter-1KzvJk body-ZAhrcj flex-1O1GKY alignCenter-1dQNNs"]{
 }
 [class=".peopleList-3c4jOR"] {
 	background-color: var(--background-primary)
+}
+
+[class*=".theme-light, .headerNormal-T_seeN, .headerTag-2pZJzA"] {
+	color: var (--background-primary)
+}
+.theme-light .headerNormal-T_seeN .headerTag-2pZJzA {
+    color: var(--background-secondary);
+}
+.nameTag-m8r81H .discriminator-19kRMP, .nameTag-m8r81H .username-2b1r56 {
+	color: var(--background-primary-alt);
 }
