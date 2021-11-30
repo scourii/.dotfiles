@@ -1,16 +1,14 @@
 configuration {
 	show-icons: true;
 	drun-display-format: "{icon} {name}";
-	display-drun: "﩯";
-	display-run: "";
-	display-ssh: "";
+	drun-icon-theme: "Papirus";
+	display-drun: "";
 	location: 0;
 	yoffset: 0;
 	xoffset: 0;
 	fullscreen: false;
 	terminal: "urxvt";
 	columns: 3;
-	sidebar-mode: true;
 }
 
 * {
@@ -53,9 +51,6 @@ element-icon {
 	size: 1.1em;
 }
 
-#mode-switcher {
-	children: [ button ];
-}
 
 button {
 	border-radius: 5px;
