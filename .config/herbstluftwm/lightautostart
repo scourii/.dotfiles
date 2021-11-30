@@ -1,15 +1,13 @@
 #!/usr/bin/bash
 
 # this is a simple config for herbstluftwm
-
 hc() {
-    cmds="$cmds , $@"
+    herbstclient "$@"
 }
-hc set_layout horizontal
+
 hc emit_hook reload
-hc set_monitors 1920x1047+0+33 1920x1047+1920+33
-xsetroot -solid '#222222'
-picom --corner-radius 8 
+xsetroot -solid '#5A8E3A'
+feh --bg-scale /home/scouri/IMG_20210523_142256.png --bg-fill /home/scouri/DptUNeOUYAEGCoE.jpeg
 # remove all existing keybindings
 hc keyunbind --all
 
@@ -17,14 +15,14 @@ hc keyunbind --all
 # if you have a super key you will be much happier with Mod set to Mod4
 #Mod=Mod1    # Use alt as the main modifier
 Mod=Mod4   # Use the super key as the main modifier
-myTerminal=rxvt-unicode
-Editor=nvim
 
-hc keybind $Mod-Shift-c quit
+hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-w close
-hc keybind $Ctrl-Shift-t spawn $myTerminal # use your $TERMINAL with xterm as fallback
+hc keybind $Mod-Return spawn "${TERMINAL:-xterm}" # use your $TERMINAL with xterm as fallback
 
+
+# moving clients in tiling and floating mode
 # basic movement in tiling and floating mode
 # focusing clients
 hc keybind $Mod-a  focus left
@@ -47,21 +45,21 @@ hc keybind $Mod-Control-space split explode
 
 # resizing frames and floating clients
 resizestep=0.02
-hc keybind $Mod-left       resize left +$resizestep
-hc keybind $Mod-down      resize down +$resizestep
-hc keybind $Mod-up       resize up +$resizestep
-hc keybind $Mod-right       resize right +$resizestep
+hc keybind $Mod-Control-h       resize left +$resizestep
+hc keybind $Mod-Control-j       resize down +$resizestep
+hc keybind $Mod-Control-k       resize up +$resizestep
+hc keybind $Mod-Control-l       resize right +$resizestep
 hc keybind $Mod-Control-Left    resize left +$resizestep
 hc keybind $Mod-Control-Down    resize down +$resizestep
 hc keybind $Mod-Control-Up      resize up +$resizestep
 hc keybind $Mod-Control-Right   resize right +$resizestep
 
 # tags
-tag_names=( "Helado", "Dulce", "Pastel", "Azucar", "Chocolate", "Cafe" )
+tag_names=( {1..9} )
 tag_keys=( {1..9} 0 )
 
 hc rename default "${tag_names[0]}" || true
-for i in ${!tag_names[@]} ; do
+for i in "${!tag_names[@]}" ; do
     hc add "${tag_names[$i]}"
     key="${tag_keys[$i]}"
     if ! [ -z "$key" ] ; then
@@ -80,14 +78,16 @@ hc keybind $Mod-f floating toggle
 hc keybind $Mod-l fullscreen toggle
 hc keybind $Mod-Shift-f set_attr clients.focus.floating toggle
 hc keybind $Mod-Shift-m set_attr clients.focus.minimized true
+hc keybind $Mod-Control-m jumpto last-minimized
 hc keybind $Mod-p pseudotile toggle
 # The following cycles through the available layouts within a frame, but skips
 # layouts, if the layout change wouldn't affect the actual window positions.
 # I.e. if there are two windows within a frame, the grid layout is skipped.
-hc keybind $mod-Shift-space                                                           \
+hc keybind $Mod-space                                                           \
             or , and . compare tags.focus.curframe_wcount = 2                   \
-                     . cycle_layout +1 horizontal vertical max vertical grid    \
+                     . cycle_layout +1 vertical horizontal max vertical grid    \
                , cycle_layout +1
+
 # mouse
 hc mouseunbind --all
 hc mousebind $Mod-Button1 move
@@ -100,17 +100,15 @@ hc keybind $Mod-Tab         cycle_all +1
 hc keybind $Mod-Shift-Tab   cycle_all -1
 hc keybind $Mod-c cycle
 hc keybind $Mod-i jumpto urgent
-
 hc keybind XF86AudioRaiseVolume spawn /home/scouri/audioup.sh
 hc keybind XF86AudioLowerVolume spawn /home/scouri/audiodown.sh
 hc keybind $Mod-Shift-b spawn /home/scouri/hidebar.sh
 hc keybind Caps_Lock spawn /home/scouri/capslock.sh
+hc keybind $Mod-space spawn rofi -theme /home/scouri/launcher_light.rasi -show drun
+hc keybind Mod1-Tab spawn rofi -theme /home/scouri/light_window_switcher.rasi -show window
+hc keybind Control-Shift-b spawn cmus-remote -n
+hc keybind Control-Shift-z spawn cmus-remote -r
 # theme
-hc attr theme.tiling.reset 1
-hc attr theme.floating.reset 1
-hc keybind $Mod-Shift-q killall hersbtluftwm && herbstluftwm
-
-### Frame colors
 hc set frame_border_active_color '#fccec1'
 hc set frame_border_normal_color '#c8c2bf'
 hc set frame_bg_normal_color '#ede6e3'
@@ -138,10 +136,7 @@ hc attr theme.floating.outer_color '#ede6e3'
 hc attr theme.active.inner_color '#c8c2bf'
 hc attr theme.active.outer_color '#c8c2bf'
 hc attr theme.background_color '#ede6e3'
-#Floating
 hc attr theme.floating.padding_top 20
-
-
 hc set window_gap 4
 hc set frame_padding 4
 hc set smart_window_surroundings off
@@ -152,25 +147,26 @@ hc set mouse_recenter_gap 0
 hc unrule -F
 #hc rule class=XTerm tag=3 # move all xterms to tag 3
 hc rule focus=on # normally focus new clients
-hc rule floatplacement=center
+hc rule floatplacement=smart
 #hc rule focus=off # normally do not focus new clients
 # give focus to most common terminals
 #hc rule class~'(.*[Rr]xvt.*|.*[Tt]erm|Konsole)' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' floating=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
-#hc set monitors 1920x1080+0+0 1920x1080+1920+0
-hc detect_monitors
+
 hc set tree_style '╾│ ├└╼─┐'
 
-herbstclient chain $cmds &
-hc unlock
-./lemonbar.sh | lemonbar -n bar -B \#e6dad6 -F \#6c605a -f 'SF Mono:size=10.8' -f 'JetBrains Mono:style=Italic:size=10.8' -f 'Victor Mono:style=SemiBold Italic:size=10.8' -f 'Noto Sans JP:size=10.8' -f 'mplus Nerd Font:style=Italic:size=10.8' -p -g 1920x30+0+0 | sh &
 # unlock, just to be sure
-
-
+hc unlock
 # do multi monitor setup here, e.g.:
 # hc set_monitors 1280x1024+0+0 1280x1024+1280+0
 # or simply:
-# hc detect_monitors
+hc set_monitors 1920x1080+0+0 1920x1080+1920+0
 
+ ./lemonbar.sh | lemonbar -n bar -B \#e6dad6 -F \#6c605a -f 'SF Mono:size=10.8' -f 'JetBrains Mono:style=Italic:size=10.8' -f 'Victor Mono:style=SemiBold Italic:size=10.8' -f 'Noto Sans JP:size=10.8' -f 'mplus Nerd Font:style=Italic:size=10.8' -p -g 1920x30+0+0 | sh &
+
+
+picom
+pkill dunst
+dunst
