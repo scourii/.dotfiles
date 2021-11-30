@@ -2,7 +2,7 @@ configuration {
     drun-display-format: "{icon} {name}";
     display-drun: "Apps";
 	show-icons: true;
-	icon-theme: "Nordic-Darker";
+	icon-theme: "Papirus";
 	location: 0;
 	yoffset: 0;
     xoffset: 0;	
