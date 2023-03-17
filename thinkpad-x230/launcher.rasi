@@ -1,0 +1,69 @@
+configuration {
+	show-icons: true;
+	drun-display-format: "{icon} {name}";
+	drun-icon-theme: "Papirus";
+	display-drun: "";
+	location: 0;
+	yoffset: 0;
+	xoffset: 0;
+	fullscreen: false;
+	terminal: "urxvt";
+	columns: 3;
+}
+
+* {
+	font: "Victor Mono Italic 11";
+	background-color: #F5ECEB;
+	text-color: #250E07;
+}
+
+#window {
+	width: 50%;
+	height: 50%;
+	padding: 30px;
+}
+
+#inputbar {
+	children: [ prompt, textbox-prompt-colon, entry ];
+	padding: 10px;
+}
+
+#textbox-prompt-colon {
+	expand: false;
+	str: " >  ";
+    font: "Victor Mono 12";
+}
+
+#entry {
+    font: "Victor Mono Bold Italic 11";
+}
+
+#element {
+	padding: 15px;
+}
+
+#element.selected {
+	background-color: #F0DFDD;
+	foreground: inherit;
+	padding: 15px;
+}
+element-text {
+	background-color: inherit;
+}
+
+element-icon {
+	background-color: 				inherit;
+	text-color:       				inherit;
+	size: 1.1em;
+}
+
+
+button {
+	border-radius: 5px;
+	padding: 5px;
+}
+
+button.selected {
+	background-color: #e3d0cb;
+}
+

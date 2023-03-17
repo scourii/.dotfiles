@@ -1,0 +1,80 @@
+configuration {
+    drun-display-format: "{icon} {name}";
+    display-drun: "Apps";
+	show-icons: false;
+	icon-theme: "Papirus";
+	location: 0;
+	yoffset: 0;
+    xoffset: 0;	
+	fake-transparency: false;
+	hide-scrollbar: true;
+	bw: 0;
+    fullscreen: false;
+    show-icons: false;
+	terminal: "urxvt";
+	sidebar-mode: false;
+}
+
+* {
+  background-color: #F5ECEB;
+  font: "Victor Mono 11";
+  text-color: #250E07;
+}
+
+window {
+  padding : 0px;
+  height: 60%;
+  width: 35%;
+  transparency: "real";
+  /*background-color: rgba(230, 218, 214, 1.0);*/
+}
+
+mainbox {
+  children: [ inputbar, listview ];
+  padding: 0% 0% 0% 0%;
+  border: 0;
+  border-radius: 0;
+}
+
+listview {
+  columns: 1;
+  padding: 0;
+  spacing: 2;
+}
+
+element {
+  border: 0;
+  padding: 12 12 12 12;
+  border-radius: 0;
+}
+
+element-icon {
+  size: 1.1em ;
+}
+
+element.selected {
+background-color: #F0DFDD;
+text-color: inherit;
+}
+
+element-text {
+background-color: inherit;
+}
+
+inputbar {
+  children: [entry];
+  padding: 4 4 0 0;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0 0 0 4;
+  border-color: #E7A09E;
+}
+
+prompt {
+  enabled: false;
+}
+
+entry {
+  text-color: #250E07;
+  padding: 8 12 8 12;
+}
+
