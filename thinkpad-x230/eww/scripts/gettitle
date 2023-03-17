@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+function name {
+	name=$(xprop -id $(xdotool getwindowfocus) WM_NAME | cut -d \" -f2)
+	if [ "${name}" = "WM_NAME:  not found." ]; then
+		echo "N/A"
+    return
+  fi
+
+  suffix=""
+  if test $(echo ${name} | wc -c) -ge 70; then
+    suffix="..."
+  fi
+
+  echo "${name:0:70}${suffix}"
+}
+
+xprop -spy -root _NET_ACTIVE_WINDOW | while read -r; do
+  name
+done

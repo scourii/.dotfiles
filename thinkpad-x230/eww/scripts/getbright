@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+brightness=$(xrandr --verbose --current | grep ^"DP-1" -A5 | tail -n1 | cut -d " " -f2)
+
+echo "${brightness} * 100" | bc | cut -d "." -f1

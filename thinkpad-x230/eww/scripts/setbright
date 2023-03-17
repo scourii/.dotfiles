@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+brightness=$(echo "scale=1;${1} / 100" | bc)
+xrandr --output 'DP-1' --brightness ${brightness}

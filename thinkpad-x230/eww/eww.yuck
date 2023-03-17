@@ -1,0 +1,57 @@
+(defwindow bar
+  :monitor 0
+  :geometry (geometry
+    :y "0px"
+    :width "100%"
+    :height "25px"
+    :anchor "top center")
+  :stacking "fg"
+  :windowtype "dock"
+  :reserve (struts :side "top" :distance "3%")
+  (bar))
+
+(defwidget bar []
+  (box :class "bar" :orientation "h"
+    (left)
+    (center)
+    (right)))
+
+(defwidget left []
+  (box :class "left" :orientation "h" :halign "start" :valign "center" :space-evenly false :spacing 20
+    (literal :content ws)))
+
+(defwidget center []
+  (box :class "center" :orientation "h" :halign "center" :space-evenly false :spacing 10
+    time))
+
+(defwidget right []
+  (box :class "right" :orientation "h" :halign "end" :space-evenly false
+    (label :class "bat" :text {" " + bat + "%   "})
+    (label :class "cpu" :text {" " + cpu + "%   "})
+    (label :class "ram" :text {" " + ram + "%   "})
+    (metric :label "🔊"
+            :value volume
+	    :tooltip "${volume}%"
+            :onchange "pactl set-sink-volume @DEFAULT_SINK@ {}%")))
+
+(defwidget metric [label value tooltip onchange]
+  (box :orientation "h"
+       :class "metric"
+       :space-evenly false
+    (box :class "label" label)
+    (scale :min 0
+           :max 101
+           :value value
+           :tooltip tooltip
+           :onchange onchange)))
+
+(deflisten ws       "scripts/workspaces")
+(deflisten title    "scripts/gettitle")
+(defpoll   bat       :interval "1s" "scripts/battery")
+(defpoll   volume    :interval "5s" "scripts/getvol")
+(defpoll   ram      :interval "10s" "scripts/getram")
+(defpoll   cpu      :interval "10s" "scripts/getcpu")
+
+(defpoll time :interval "1s"
+  "date '+%H:%M | %b %d'")
+

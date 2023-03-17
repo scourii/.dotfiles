@@ -1,0 +1,50 @@
+
+* {
+  all: unset;
+  font-family: azukifontBI, mplus Nerd Font, Jet Brains Mono;
+}
+
+tooltip {
+  background-color:#F3EAE9;
+  color: #250E07;
+  font-size: 14px;
+}
+
+.metric scale trough highlight {
+  all: unset;
+  background-color: #D68482;
+  color: #F3EAE9;
+  border-radius: 10px;
+}
+
+.metric scale trough {
+  all: unset;
+  background-color: #ECC3C2;
+  border-radius: 50px;
+  min-height: 3px;
+  min-width: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.bar {
+  // Maybe use w/ dark wallpaper?
+  // border: 1px solid $foreground;
+  padding: 0px 15px 0px 15px;
+  background-color: #f3eae9;
+  color: #002b36;
+}
+
+.workspaces, .label {
+  font-size: 18px;
+}
+
+.workspaces button:hover {
+  color: #Ecc2c2;
+}
+.workspaces .active {
+	color: #D68482;
+}
+.text {
+  font-size: 14px;
+}

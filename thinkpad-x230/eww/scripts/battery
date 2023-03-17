@@ -1,0 +1,11 @@
+#!/bin/sh
+
+bat0=/sys/class/power_supply/BAT0/
+bat1=/sys/class/power_supply/BAT1/capacity
+if [ -f $bat1 ]; then
+	per=$(($(cat "$bat0/capacity") + $(cat "$bat1")))
+	div=$(($per / 200))
+	echo "scale=0 ; $per * 100 / 200" | bc
+else
+	echo "scale=0 ; $(cat "$bat0/capacity") * 100 / 200 " | bc 
+fi

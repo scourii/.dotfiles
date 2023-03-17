@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+CONFIG_DIR="${HOME}/.config/eww/dashboard/"
+EWW="eww -c ${CONFIG_DIR}"
+
+${EWW} close dashboard || ${EWW} open dashboard

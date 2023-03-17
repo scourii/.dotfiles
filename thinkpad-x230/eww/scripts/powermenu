@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+CONFIG_DIR="${HOME}/.config/eww/powermenu/"
+EWW="eww -c ${CONFIG_DIR}"
+
+${EWW} close powermenu || ${EWW} open powermenu
